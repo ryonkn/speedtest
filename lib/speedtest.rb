@@ -36,6 +36,8 @@ module Speedtest
                  pretty_upload_rate: pretty_speed(upload_rate), upload_rate: upload_rate)
     end
 
+    private
+
     def pretty_speed(speed)
       units = %w[bps Kbps Mbps Gbps Tbps]
       i = 0
