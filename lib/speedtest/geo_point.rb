@@ -1,3 +1,5 @@
+require 'haversine'
+
 module Speedtest
   class GeoPoint
     attr_accessor :lat, :lon
@@ -12,7 +14,8 @@ module Speedtest
     end
 
     def distance(point)
-      Math.sqrt((point.lon - lon)**2 + (point.lat - lat)**2)
+      distance = Haversine.distance(point.lat, point.lon, lat, lon)
+      distance.to_kilometers
     end
   end
 end
