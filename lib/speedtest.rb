@@ -6,13 +6,15 @@ require_relative 'speedtest/geo_point'
 module Speedtest
   class Test
 
-    def initialize(options = {})
-      @download_runs = options[:download_runs]    || 4
-      @upload_runs = options[:upload_runs]        || 4
-      @ping_runs = options[:ping_runs]            || 4
-      @download_sizes = options[:download_sizes]  || [750, 1500]
-      @upload_sizes = options[:upload_sizes]      || [197190, 483960]
-      @debug = options[:debug]                    || false
+    def initialize(download_runs: 4, upload_runs: 4, ping_runs: 4,
+                   download_sizes: [750, 1500], upload_sizes: [197190, 483960],
+                   debug: false)
+      @download_runs = download_runs
+      @upload_runs = upload_runs
+      @ping_runs = ping_runs
+      @download_sizes = download_sizes
+      @upload_sizes = upload_sizes
+      @debug = debug
     end
 
     def run()
