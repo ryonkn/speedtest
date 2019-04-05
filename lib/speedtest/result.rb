@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Speedtest
   class Result
     attr_accessor :server, :latency, :download_rate, :pretty_download_rate, :upload_rate, :pretty_upload_rate
