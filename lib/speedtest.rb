@@ -138,10 +138,11 @@ module Speedtest
 	    latency_sorted_servers = sorted_servers[0..9].map { |x|
 	      {
 	      :latency => ping(x[:url]),
-	      :url => x[:url]
+	      :url => x[:url],
+        :distance => x[:distance]
 	      }}.sort_by { |x| x[:latency] }
 	    selected = latency_sorted_servers[0]
-	    log "Automatically selected server: #{selected[:url]} - #{selected[:latency]} ms"
+	    log "Automatically selected server: #{selected[:url]} - #{selected[:latency]} ms - #{selected[:distance]} km"
 
 	    selected
 	  end
